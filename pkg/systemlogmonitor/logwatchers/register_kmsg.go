@@ -16,7 +16,7 @@ limitations under the License.
 
 package logwatchers
 
-import "k8s.io/node-problem-detector/pkg/systemlogmonitor/logwatchers/kmsg"
+import "github.com/erstaples/node-problem-detector/pkg/systemlogmonitor/logwatchers/kmsg"
 
 func init() {
 	registerLogWatcher("kmsg", kmsg.NewKmsgWatcher)

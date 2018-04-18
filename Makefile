@@ -14,7 +14,7 @@
 
 # Build the node-problem-detector image.
 
-.PHONY: all build-container build-tar build push-container push-tar push clean vet fmt version Dockerfile
+.PHONY: all build-container build push-container push clean vet fmt version Dockerfile
 
 all: build
 
@@ -25,21 +25,13 @@ VERSION:=$(shell git describe --tags --dirty)
 TAG?=$(VERSION)
 
 # REGISTRY is the container registry to push into.
-REGISTRY?=staging-k8s.gcr.io
-
-# UPLOAD_PATH is the cloud storage path to upload release tar.
-UPLOAD_PATH?=gs://kubernetes-release
-# Trim the trailing '/' in the path
-UPLOAD_PATH:=$(shell echo $(UPLOAD_PATH) | sed '$$s/\/*$$//')
+REGISTRY?=191682557156.dkr.ecr.us-east-1.amazonaws.com
 
 # PKG is the package name of node problem detector repo.
-PKG:=k8s.io/node-problem-detector
+PKG:=github.com/erstaples/node-problem-detector
 
 # PKG_SOURCES are all the go source code.
 PKG_SOURCES:=$(shell find pkg cmd -name '*.go')
-
-# TARBALL is the name of release tar. Include binary version by default.
-TARBALL:=node-problem-detector-$(VERSION).tar.gz
 
 # IMAGE is the image name of the node problem detector container image.
 IMAGE:=$(REGISTRY)/node-problem-detector:$(TAG)
@@ -47,13 +39,13 @@ IMAGE:=$(REGISTRY)/node-problem-detector:$(TAG)
 # ENABLE_JOURNALD enables build journald support or not. Building journald support needs libsystemd-dev
 # or libsystemd-journal-dev.
 # TODO(random-liu): Build NPD inside container.
-ENABLE_JOURNALD?=1
+ENABLE_JOURNALD?=0
 
 # TODO(random-liu): Support different architectures.
 # The debian-base:0.3 image built from kubernetes repository is based on Debian Stretch.
 # It includes systemd 232 with support for both +XZ and +LZ4 compression.
 # +LZ4 is needed on some os distros such as COS.
-BASEIMAGE:=k8s.gcr.io/debian-base-amd64:0.3
+BASEIMAGE:=golang:1.10.1-alpine3.7
 
 # Disable cgo by default to make the binary statically linked.
 CGO_ENABLED:=0
@@ -77,10 +69,10 @@ fmt:
 version:
 	@echo $(VERSION)
 
-./bin/node-problem-detector: $(PKG_SOURCES)
-	CGO_ENABLED=$(CGO_ENABLED) GOOS=linux go build -o bin/node-problem-detector \
-	     -ldflags '-X $(PKG)/pkg/version.version=$(VERSION)' \
-	     $(BUILD_TAGS) cmd/node_problem_detector.go
+./bin/node-problem-detector:
+	env CGO_ENABLED=$(CGO_ENABLED) GOOS=linux GOARCH=amd64 go build -o bin/node-problem-detector \
+			-ldflags '-X $(PKG)/pkg/version.version=$(VERSION)' \
+			$(PKG)/cmd
 
 Dockerfile: Dockerfile.in
 	sed -e 's|@BASEIMAGE@|$(BASEIMAGE)|g' $< >$@
@@ -91,21 +83,13 @@ test: vet fmt
 build-container: ./bin/node-problem-detector Dockerfile
 	docker build -t $(IMAGE) .
 
-build-tar: ./bin/node-problem-detector
-	tar -zcvf $(TARBALL) bin/ config/
-	sha1sum $(TARBALL)
-	md5sum $(TARBALL)
-
-build: build-container build-tar
+build: build-container
 
 push-container: build-container
-	gcloud docker -- push $(IMAGE)
+	eval "$(shell aws ecr get-login --no-include-email --region us-east-1)"
+	docker push $(IMAGE)
 
-push-tar: build-tar
-	gsutil cp $(TARBALL) $(UPLOAD_PATH)/node-problem-detector/
-
-push: push-container push-tar
+push: push-container
 
 clean:
 	rm -f bin/node-problem-detector
-	rm -f node-problem-detector-*.tar.gz

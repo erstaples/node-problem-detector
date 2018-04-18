@@ -22,7 +22,7 @@ import (
 	"k8s.io/kubernetes/pkg/api"
 	"k8s.io/kubernetes/pkg/api/unversioned"
 
-	"k8s.io/node-problem-detector/pkg/types"
+	"github.com/erstaples/node-problem-detector/pkg/types"
 )
 
 // ConvertToAPICondition converts the internal node condition to api.NodeCondition.

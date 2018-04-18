@@ -21,9 +21,9 @@ import (
 	"sync"
 	"time"
 
-	"k8s.io/node-problem-detector/pkg/problemclient"
-	"k8s.io/node-problem-detector/pkg/types"
-	problemutil "k8s.io/node-problem-detector/pkg/util"
+	"github.com/erstaples/node-problem-detector/pkg/problemclient"
+	"github.com/erstaples/node-problem-detector/pkg/types"
+	problemutil "github.com/erstaples/node-problem-detector/pkg/util"
 
 	"k8s.io/kubernetes/pkg/api"
 	"k8s.io/kubernetes/pkg/util/clock"

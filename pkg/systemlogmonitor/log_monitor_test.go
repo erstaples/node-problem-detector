@@ -25,9 +25,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	watchertest "k8s.io/node-problem-detector/pkg/systemlogmonitor/logwatchers/testing"
-	logtypes "k8s.io/node-problem-detector/pkg/systemlogmonitor/types"
-	"k8s.io/node-problem-detector/pkg/types"
+	watchertest "github.com/erstaples/node-problem-detector/pkg/systemlogmonitor/logwatchers/testing"
+	logtypes "github.com/erstaples/node-problem-detector/pkg/systemlogmonitor/types"
+	"github.com/erstaples/node-problem-detector/pkg/types"
 )
 
 const (

@@ -21,7 +21,7 @@ import (
 	"os"
 	"time"
 
-	"k8s.io/node-problem-detector/pkg/types"
+	"github.com/erstaples/node-problem-detector/pkg/types"
 )
 
 var (

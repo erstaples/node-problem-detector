@@ -24,10 +24,10 @@ import (
 
 	"k8s.io/kubernetes/pkg/util/clock"
 
-	"k8s.io/node-problem-detector/pkg/condition"
-	"k8s.io/node-problem-detector/pkg/problemclient"
-	"k8s.io/node-problem-detector/pkg/types"
-	"k8s.io/node-problem-detector/pkg/util"
+	"github.com/erstaples/node-problem-detector/pkg/condition"
+	"github.com/erstaples/node-problem-detector/pkg/problemclient"
+	"github.com/erstaples/node-problem-detector/pkg/types"
+	"github.com/erstaples/node-problem-detector/pkg/util"
 )
 
 // ProblemDetector collects statuses from all problem daemons and update the node condition and send node event.

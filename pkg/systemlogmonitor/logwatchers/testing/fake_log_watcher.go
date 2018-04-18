@@ -19,8 +19,8 @@ package testing
 import (
 	"sync"
 
-	"k8s.io/node-problem-detector/pkg/systemlogmonitor/logwatchers/types"
-	logtypes "k8s.io/node-problem-detector/pkg/systemlogmonitor/types"
+	"github.com/erstaples/node-problem-detector/pkg/systemlogmonitor/logwatchers/types"
+	logtypes "github.com/erstaples/node-problem-detector/pkg/systemlogmonitor/types"
 )
 
 // FakeLogWatcher is a fake mock of log watcher.

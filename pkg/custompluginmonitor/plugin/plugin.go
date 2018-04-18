@@ -26,8 +26,8 @@ import (
 	"time"
 
 	"github.com/golang/glog"
-	cpmtypes "k8s.io/node-problem-detector/pkg/custompluginmonitor/types"
-	"k8s.io/node-problem-detector/pkg/util/tomb"
+	cpmtypes "github.com/erstaples/node-problem-detector/pkg/custompluginmonitor/types"
+	"github.com/erstaples/node-problem-detector/pkg/util/tomb"
 )
 
 type Plugin struct {

@@ -17,7 +17,7 @@ limitations under the License.
 package types
 
 import (
-	"k8s.io/node-problem-detector/pkg/systemlogmonitor/types"
+	"github.com/erstaples/node-problem-detector/pkg/systemlogmonitor/types"
 )
 
 // LogWatcher is the interface of a log watcher.

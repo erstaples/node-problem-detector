@@ -20,7 +20,7 @@ import (
 	"reflect"
 	"testing"
 
-	"k8s.io/node-problem-detector/pkg/systemlogmonitor/types"
+	"github.com/erstaples/node-problem-detector/pkg/systemlogmonitor/types"
 )
 
 func TestPush(t *testing.T) {

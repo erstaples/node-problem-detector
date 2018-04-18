@@ -20,7 +20,7 @@ import (
 	"regexp"
 	"strings"
 
-	"k8s.io/node-problem-detector/pkg/systemlogmonitor/types"
+	"github.com/erstaples/node-problem-detector/pkg/systemlogmonitor/types"
 )
 
 // LogBuffer buffers the logs and supports match in the log buffer with regular expression.

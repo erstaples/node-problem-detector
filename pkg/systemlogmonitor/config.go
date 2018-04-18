@@ -19,9 +19,9 @@ package systemlogmonitor
 import (
 	"regexp"
 
-	watchertypes "k8s.io/node-problem-detector/pkg/systemlogmonitor/logwatchers/types"
-	systemlogtypes "k8s.io/node-problem-detector/pkg/systemlogmonitor/types"
-	"k8s.io/node-problem-detector/pkg/types"
+	watchertypes "github.com/erstaples/node-problem-detector/pkg/systemlogmonitor/logwatchers/types"
+	systemlogtypes "github.com/erstaples/node-problem-detector/pkg/systemlogmonitor/types"
+	"github.com/erstaples/node-problem-detector/pkg/types"
 )
 
 // MonitorConfig is the configuration of log monitor.

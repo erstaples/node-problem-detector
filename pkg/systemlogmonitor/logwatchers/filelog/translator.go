@@ -20,7 +20,7 @@ import (
 	"regexp"
 	"time"
 
-	logtypes "k8s.io/node-problem-detector/pkg/systemlogmonitor/types"
+	logtypes "github.com/erstaples/node-problem-detector/pkg/systemlogmonitor/types"
 
 	"github.com/golang/glog"
 )

@@ -23,10 +23,10 @@ import (
 
 	"github.com/golang/glog"
 
-	"k8s.io/node-problem-detector/pkg/custompluginmonitor/plugin"
-	cpmtypes "k8s.io/node-problem-detector/pkg/custompluginmonitor/types"
-	"k8s.io/node-problem-detector/pkg/types"
-	"k8s.io/node-problem-detector/pkg/util/tomb"
+	"github.com/erstaples/node-problem-detector/pkg/custompluginmonitor/plugin"
+	cpmtypes "github.com/erstaples/node-problem-detector/pkg/custompluginmonitor/types"
+	"github.com/erstaples/node-problem-detector/pkg/types"
+	"github.com/erstaples/node-problem-detector/pkg/util/tomb"
 )
 
 type customPluginMonitor struct {

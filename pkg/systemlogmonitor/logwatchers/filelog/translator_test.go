@@ -23,7 +23,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	logtypes "k8s.io/node-problem-detector/pkg/systemlogmonitor/types"
+	logtypes "github.com/erstaples/node-problem-detector/pkg/systemlogmonitor/types"
 )
 
 func TestTranslate(t *testing.T) {

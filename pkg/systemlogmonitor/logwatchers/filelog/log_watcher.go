@@ -30,9 +30,9 @@ import (
 	"github.com/golang/glog"
 	"github.com/google/cadvisor/utils/tail"
 
-	"k8s.io/node-problem-detector/pkg/systemlogmonitor/logwatchers/types"
-	logtypes "k8s.io/node-problem-detector/pkg/systemlogmonitor/types"
-	"k8s.io/node-problem-detector/pkg/util/tomb"
+	"github.com/erstaples/node-problem-detector/pkg/systemlogmonitor/logwatchers/types"
+	logtypes "github.com/erstaples/node-problem-detector/pkg/systemlogmonitor/types"
+	"github.com/erstaples/node-problem-detector/pkg/util/tomb"
 )
 
 type filelogWatcher struct {

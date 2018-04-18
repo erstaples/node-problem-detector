@@ -26,8 +26,8 @@ import (
 	"github.com/coreos/go-systemd/sdjournal"
 	"github.com/stretchr/testify/assert"
 
-	"k8s.io/node-problem-detector/pkg/systemlogmonitor/logwatchers/types"
-	logtypes "k8s.io/node-problem-detector/pkg/systemlogmonitor/types"
+	"github.com/erstaples/node-problem-detector/pkg/systemlogmonitor/logwatchers/types"
+	logtypes "github.com/erstaples/node-problem-detector/pkg/systemlogmonitor/types"
 )
 
 func TestTranslate(t *testing.T) {

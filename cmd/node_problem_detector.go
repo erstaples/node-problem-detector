@@ -26,13 +26,13 @@ import (
 	"github.com/golang/glog"
 	"github.com/spf13/pflag"
 
-	"k8s.io/node-problem-detector/cmd/options"
-	"k8s.io/node-problem-detector/pkg/custompluginmonitor"
-	"k8s.io/node-problem-detector/pkg/problemclient"
-	"k8s.io/node-problem-detector/pkg/problemdetector"
-	"k8s.io/node-problem-detector/pkg/systemlogmonitor"
-	"k8s.io/node-problem-detector/pkg/types"
-	"k8s.io/node-problem-detector/pkg/version"
+	"github.com/erstaples/node-problem-detector/cmd/options"
+	"github.com/erstaples/node-problem-detector/pkg/custompluginmonitor"
+	"github.com/erstaples/node-problem-detector/pkg/problemclient"
+	"github.com/erstaples/node-problem-detector/pkg/problemdetector"
+	"github.com/erstaples/node-problem-detector/pkg/systemlogmonitor"
+	"github.com/erstaples/node-problem-detector/pkg/types"
+	"github.com/erstaples/node-problem-detector/pkg/version"
 )
 
 func startHTTPServer(p problemdetector.ProblemDetector, npdo *options.NodeProblemDetectorOptions) {

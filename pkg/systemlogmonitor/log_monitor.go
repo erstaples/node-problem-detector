@@ -21,14 +21,14 @@ import (
 	"io/ioutil"
 	"time"
 
-	"k8s.io/node-problem-detector/pkg/systemlogmonitor/logwatchers"
-	watchertypes "k8s.io/node-problem-detector/pkg/systemlogmonitor/logwatchers/types"
-	logtypes "k8s.io/node-problem-detector/pkg/systemlogmonitor/types"
-	systemlogtypes "k8s.io/node-problem-detector/pkg/systemlogmonitor/types"
-	"k8s.io/node-problem-detector/pkg/types"
+	"github.com/erstaples/node-problem-detector/pkg/systemlogmonitor/logwatchers"
+	watchertypes "github.com/erstaples/node-problem-detector/pkg/systemlogmonitor/logwatchers/types"
+	logtypes "github.com/erstaples/node-problem-detector/pkg/systemlogmonitor/types"
+	systemlogtypes "github.com/erstaples/node-problem-detector/pkg/systemlogmonitor/types"
+	"github.com/erstaples/node-problem-detector/pkg/types"
 
 	"github.com/golang/glog"
-	"k8s.io/node-problem-detector/pkg/util/tomb"
+	"github.com/erstaples/node-problem-detector/pkg/util/tomb"
 )
 
 type logMonitor struct {

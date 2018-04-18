@@ -28,9 +28,9 @@ import (
 	"github.com/coreos/go-systemd/sdjournal"
 	"github.com/golang/glog"
 
-	"k8s.io/node-problem-detector/pkg/systemlogmonitor/logwatchers/types"
-	logtypes "k8s.io/node-problem-detector/pkg/systemlogmonitor/types"
-	"k8s.io/node-problem-detector/pkg/util/tomb"
+	"github.com/erstaples/node-problem-detector/pkg/systemlogmonitor/logwatchers/types"
+	logtypes "github.com/erstaples/node-problem-detector/pkg/systemlogmonitor/types"
+	"github.com/erstaples/node-problem-detector/pkg/util/tomb"
 )
 
 // Compiling go-systemd/sdjournald needs libsystemd-dev or libsystemd-journal-dev,

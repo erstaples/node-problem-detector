@@ -19,7 +19,7 @@ limitations under the License.
 package logwatchers
 
 import (
-	"k8s.io/node-problem-detector/pkg/systemlogmonitor/logwatchers/journald"
+	"github.com/erstaples/node-problem-detector/pkg/systemlogmonitor/logwatchers/journald"
 )
 
 const journaldPluginName = "journald"

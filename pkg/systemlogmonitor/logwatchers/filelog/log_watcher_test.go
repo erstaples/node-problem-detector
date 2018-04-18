@@ -23,8 +23,8 @@ import (
 	"testing"
 	"time"
 
-	"k8s.io/node-problem-detector/pkg/systemlogmonitor/logwatchers/types"
-	logtypes "k8s.io/node-problem-detector/pkg/systemlogmonitor/types"
+	"github.com/erstaples/node-problem-detector/pkg/systemlogmonitor/logwatchers/types"
+	logtypes "github.com/erstaples/node-problem-detector/pkg/systemlogmonitor/types"
 
 	"code.cloudfoundry.org/clock/fakeclock"
 	"github.com/stretchr/testify/assert"

@@ -20,7 +20,7 @@ import (
 	"testing"
 	"time"
 
-	cpmtypes "k8s.io/node-problem-detector/pkg/custompluginmonitor/types"
+	cpmtypes "github.com/erstaples/node-problem-detector/pkg/custompluginmonitor/types"
 )
 
 func TestNewPluginRun(t *testing.T) {

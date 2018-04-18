@@ -1,5 +1,5 @@
 {
-	"ImportPath": "k8s.io/node-problem-detector",
+	"ImportPath": "github.com/erstaples/node-problem-detector",
 	"GoVersion": "go1.7",
 	"GodepVersion": "v77",
 	"Packages": [
